@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { MessageSquare } from "lucide-react"
 import type { Comment } from "@/src/features/home/data/comments"
 
@@ -8,9 +9,11 @@ type CommentsProps = {
 function CommentCard({ author, image, date, content }: Comment) {
   return (
     <div className="flex w-full gap-6 bg-white">
-      <img
+      <Image
         src={image}
         alt={author}
+        width={56}
+        height={56}
         className="h-14 w-14 shrink-0 rounded-full object-cover max-md:h-12 max-md:w-12"
       />
       <div className="flex-1">

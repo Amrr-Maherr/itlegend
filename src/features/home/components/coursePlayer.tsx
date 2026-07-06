@@ -44,6 +44,7 @@ export function CoursePlayer({ isWide, onWideChange }: CoursePlayerProps) {
           className="h-full w-full"
           src="https://www.youtube.com/embed/dQw4w9WgXcQ"
           title="Course video"
+          loading="lazy"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />

@@ -1,15 +1,13 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import { Comments } from "@/src/features/home/components/comments";
 import { CourseMaterials } from "@/src/features/home/components/courseMaterials";
 import { CoursePlayer } from "@/src/features/home/components/coursePlayer";
 import { HeaderBreadcrumb } from "@/src/features/home/components/headerBreadcrumb";
-import { LeaderboardDialog } from "@/src/features/home/components/leaderboard";
 import { NavIcons } from "@/src/features/home/components/navIcons";
-import { PdfViewerDialog } from "@/src/features/home/components/pdfViewerDialog";
 import { ProgressBar } from "@/src/features/home/components/progressBar";
-import { QuizDialog } from "@/src/features/home/components/quizDialog";
 import { ReviewForm } from "@/src/features/home/components/reviewForm";
 import { SocialIcons } from "@/src/features/home/components/socialIcons";
 import { Week } from "@/src/features/home/components/week";
@@ -21,6 +19,30 @@ import {
 } from "@/src/features/home/data/leaderboard";
 import { quizzes } from "@/src/features/home/data/quizQuestions";
 import { weeks } from "@/src/features/home/data/weeks";
+
+const LeaderboardDialog = dynamic(
+  () =>
+    import("@/src/features/home/components/leaderboard").then(
+      (m) => m.LeaderboardDialog,
+    ),
+  { ssr: false },
+);
+
+const QuizDialog = dynamic(
+  () =>
+    import("@/src/features/home/components/quizDialog").then(
+      (m) => m.QuizDialog,
+    ),
+  { ssr: false },
+);
+
+const PdfViewerDialog = dynamic(
+  () =>
+    import("@/src/features/home/components/pdfViewerDialog").then(
+      (m) => m.PdfViewerDialog,
+    ),
+  { ssr: false },
+);
 
 export function HomePage() {
   const [isWide, setIsWide] = useState(false);
