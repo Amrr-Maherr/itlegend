@@ -23,8 +23,8 @@ type WeekProps = {
 }
 
 const badgeStyles: Record<Badge["variant"], string> = {
-  success: "bg-[#EEF9F6] text-[#5FB79E]",
-  danger: "bg-[#FFF1F1] text-[#F26C6C]",
+  success: "bg-[#EEF9F6] text-[#137752]",
+  danger: "bg-[#FFF1F1] text-[#B91C1C]",
 }
 
 function Badge({ text, variant }: Badge) {
